@@ -1,26 +1,27 @@
-import React, { Component } from 'react'
+import * as React from 'react'
+import { Component } from 'react'
 import { Text } from 'react-native'
 import { Container, Header, Title, Content, Footer, Button, Icon, FooterTab, Badge } from 'native-base'
 
-export default class YouserviceApp extends Component {
+export default class App extends Component<any, any> {
   constructor() {
     super()
 
     this.state = {
-      
+
     }
   }
 
   render() {
     return (
-      <Container> 
+      <Container>
         <Header>
           <Button transparent>
             <Icon name='ios-arrow-back' />
           </Button>
-          
+
           <Title>Header</Title>
-          
+
           <Button transparent>
             <Icon name='ios-menu' />
           </Button>
