@@ -1,4 +1,5 @@
 /// <reference types="react" />
+/// <reference types="react-native" />
 
 declare namespace NativeBase {
   interface ContainerProps extends React.Props<Container> { }
@@ -16,7 +17,7 @@ declare namespace NativeBase {
   interface FooterProps extends React.Props<Footer> { }
   export class Footer extends React.Component<FooterProps, {}> { }
 
-  interface ButtonProps extends React.Props<Button> {
+  interface ButtonProps extends React.TouchableHighlightProperties {
     transparent?: boolean
     capitalize?: boolean
     active?: boolean

@@ -3,13 +3,21 @@ import { Component } from 'react'
 import { Text } from 'react-native'
 import { Container, Header, Title, Content, Footer, Button, Icon, FooterTab, Badge } from 'native-base'
 
-export default class App extends Component<any, any> {
+interface AppState {
+  selected?: number
+}
+
+export class App extends Component<any, AppState> {
   constructor() {
     super()
 
     this.state = {
-
+      selected: 0
     }
+  }
+
+  select(index: number) {
+    this.setState({ selected: index })
   }
 
   render() {
@@ -28,25 +36,25 @@ export default class App extends Component<any, any> {
         </Header>
 
         <Content>
-          <Button capitalize>test</Button>
+          <Button capitalize>kljkmlkm</Button>
         </Content>
 
         <Footer>
           <FooterTab>
-            <Button>
+            <Button active={this.state.selected === 0} onPress={this.select.bind(this, 0)}>
               <Badge>2</Badge>
               Apps
               <Icon name='ios-apps-outline' />
             </Button>
-            <Button>
+            <Button active={this.state.selected === 1} onPress={this.select.bind(this, 1)}>
               Camera
               <Icon name='ios-camera-outline' />
             </Button>
-            <Button active>
+            <Button active={this.state.selected === 2} onPress={this.select.bind(this, 2)}>
               Navigate
               <Icon name='ios-compass' />
             </Button>
-            <Button>
+            <Button active={this.state.selected === 3} onPress={this.select.bind(this, 3)}>
               Contact
               <Icon name='ios-contact-outline' />
             </Button>
